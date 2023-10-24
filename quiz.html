@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ <script>
+   function quiz()
+   {
+    location.href="mainQuiz.html";
+   }
+   function set()
+   {
+    var a=localStorage.getItem("active");
+    alert("Welcome "+a);
+    document.getElementById("wel").innerHTML="Welcome "+a;
+    
+   }
+   
+ </script>  
+</head>
+  <body onload="set()">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid" style="background-color: teal;">
+          <a class="navbar-brand" href="#">QuizMystique</a>
+          <form class="d-flex mt-1" role="search">
+            <a  id="wel" class="navbar-brand" style="font-size: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">*</p>
+          
+          </form>  
+            
+        </div>
+      </nav>
+    <center>
+
+        <main class="quiz" style=" background-image: url(pics/quiz.jpg); height: 530px;background-repeat: no-repeat;"   > 
+          
+            <div id="quiz-start " style="padding-top:15%;"  > 
+                <div class="landing " 
+                     id="start-screen" > 
+                     
+                    <h1> 
+                        Coding Quiz Challenge 
+                    </h1> 
+                    <p style="font-size: 25px;"> 
+                        "Welcome to the Ultimate Quiz Challenge! Test your knowledge and see if you can become the quiz master."
+                    </p> 
+                </div> 
+            </div> 
+        <button type="button" onclick="quiz()" type="button" class="btn btn-success">Start Quiz</button>
+        <!-- <button type="button" onclick="ques()" class="btn btn-dark">Question with answers</button> -->
+    </center>
+
+
+    <!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
