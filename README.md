@@ -1,5 +1,4 @@
-# Project
-# Quiz Website Readme
+# Quiz Website
 This readme file provides an overview of a simple quiz website that consists of three main pages: Signup/Login, Start Quiz, and Quiz. The website is built using HTML, CSS, and Bootstrap, and it fetches quiz data using an API. This document will guide you through setting up and using the quiz website.
 
 
@@ -7,13 +6,13 @@ This readme file provides an overview of a simple quiz website that consists of 
 1. Introduction
 2. Feature
 3. Prerequisites
-Getting Started
-Directory Structure
-Website Pages
-Quiz Data
-How to Use
-Contributing
-License
+4. Getting Started
+5. Directory Structure
+6. Website Pages
+7. Quiz Data
+8. How to Use
+9. Contributing
+
 
 # Introduction
 This quiz website is designed to provide users with a seamless experience for taking quizzes on various subjects. It uses a combination of HTML, CSS, and Bootstrap for the frontend and fetches quiz data from an external API to ensure a dynamic and engaging quiz experience. Let's explore the features and setup of the website.
@@ -27,6 +26,7 @@ This quiz website is designed to provide users with a seamless experience for ta
 * Interactive Quiz: Users can select answers to quiz questions and submit them for scoring.
 
 * External API Integration: Quiz questions and answers are fetched from an API, allowing for a variety of quiz topics and questions.
+
 
 # Prerequisites
 Before you begin, ensure that you have the following tools and resources:
@@ -68,7 +68,6 @@ The project's directory structure is organized as follows:
 * [style.css](.\Project\style.css)
 
 
-
 # Website Pages
 1. Signup/Login Page (index.html):
 * The landing page allows users to sign up or log in.
@@ -106,9 +105,6 @@ We welcome contributions to improve and extend this project. To contribute, plea
 4. Push your branch to your fork on GitHub.
 5. Create a pull request to the original repository, explaining your changes.
 
-
-# License
-This project is licensed under the MIT License. Please refer to the LICENSE file for more information.
 
 
 
