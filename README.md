@@ -48,19 +48,17 @@ git clone https://github.com/yourusername/quiz-website.git
 # Directory Structure
 The project's directory structure is organized as follows:
 * [pics/](.\Project\pics)
-  * [back.jpg](.\Project\pics\back.jpg)
-  * [back.webp](.\Project\pics\back.webp)
   * [book.jpg](.\Project\pics\book.jpg)
   * [film.jpg](.\Project\pics\film.jpg)
   * [games.jpg](.\Project\pics\games.jpg)
-  * [magic-cube-1976725_1280.jpg](.\Project\pics\magic-cube-1976725_1280.jpg)
-  * [Main.jpg](.\Project\pics\Main.jpg)
+  * [Main1.jpg](.\Project\pics\Main1.jpg)
+  * [Main2.jpg](.\Project\pics\Main2.jpg)
+  * [Main3.jpg](.\Project\pics\Main3.jpg)
   * [music.jpg](.\Project\pics\music.jpg)
-  * [OIP.jpeg](.\Project\pics\OIP.jpeg)
   * [quiz.jpg](.\Project\pics\quiz.jpg)
-  * [quiz2.jpg](.\Project\pics\quiz2.jpg)
 * [.gitattributes](.\Project\.gitattributes)
 * [index.html](.\Project\index.html)
+* [main.js](.\Project\main.js)
 * [mainQuiz.html](.\Project\mainQuiz.html)
 * [quiz.html](.\Project\quiz.html)
 * [README.md](.\Project\README.md)
@@ -77,7 +75,7 @@ The project's directory structure is organized as follows:
 * After successfully logging in, users are redirected to this page.
 * Users can click the "Start Quiz" button to initiate the quiz.
 
-3. Quiz Page (quiz.html):
+3. Quiz Page (mainQuiz.html):
 * This page displays the quiz questions, multiple-choice options, and a submit button.
 * Quiz questions are fetched from an external API and presented to the user for interaction.
 
