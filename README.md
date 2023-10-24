@@ -48,20 +48,27 @@ git clone https://github.com/yourusername/quiz-website.git
 # Directory Structure
 The project's directory structure is organized as follows:
 quiz-website/
-│
-├── css/
-│   └── style.css            # Custom CSS styles
-│
-├── js/
-│   └── script.js            # JavaScript for website functionality
-│
-├── index.html               # Signup/Login Page
-│
-├── quiz.html                # Start Quiz Page
-│
-├── quizdata.js              # JavaScript file for fetching quiz data from the API
-│
-├── README.md                # This readme file
+# Project
+
+* [pics/](.\Project\pics)
+  * [back.jpg](.\Project\pics\back.jpg)
+  * [back.webp](.\Project\pics\back.webp)
+  * [book.jpg](.\Project\pics\book.jpg)
+  * [film.jpg](.\Project\pics\film.jpg)
+  * [games.jpg](.\Project\pics\games.jpg)
+  * [magic-cube-1976725_1280.jpg](.\Project\pics\magic-cube-1976725_1280.jpg)
+  * [Main.jpg](.\Project\pics\Main.jpg)
+  * [music.jpg](.\Project\pics\music.jpg)
+  * [OIP.jpeg](.\Project\pics\OIP.jpeg)
+  * [quiz.jpg](.\Project\pics\quiz.jpg)
+  * [quiz2.jpg](.\Project\pics\quiz2.jpg)
+* [.gitattributes](.\Project\.gitattributes)
+* [index.html](.\Project\index.html)
+* [mainQuiz.html](.\Project\mainQuiz.html)
+* [quiz.html](.\Project\quiz.html)
+* [README.md](.\Project\README.md)
+* [script.js](.\Project\script.js)
+* [style.css](.\Project\style.css)
 
 
 # Website Pages
