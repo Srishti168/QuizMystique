@@ -10,42 +10,57 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="script.js"></script>
     <style>
-      .col{
-  color: transparent;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  background-clip: text;
-  -webkit-background-clip: text;
+      .col {
+        color: transparent;
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+        background: -webkit-radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
       }
     </style>
     <script>
-
       function validate() {
-        
         var username = document.getElementById("signEmail");
         var password = document.getElementById("spassword");
-       
+
         var er = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
         var pr = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
         if (username.value == "" || password.value == "") {
           document.getElementById("sign_err").innerHTML = "Please Fill Data";
           alert("hello");
-        }
-         else if (!er.test(username.value)) {
-          document.getElementById("sign_err").innerHTML = "Email is not Correct";
+        } else if (!er.test(username.value)) {
+          document.getElementById("sign_err").innerHTML =
+            "Email is not Correct";
           alert("hello");
         } else if (!pr.test(password.value)) {
-          document.getElementById("sign_err").innerHTML = "Password is not Correct";
+          document.getElementById("sign_err").innerHTML =
+            "Password is not Correct";
           alert("hello");
         } else {
           document.getElementById("sign_err").innerHTML = " SignUp Successful";
-          document.getElementById("sign_err").style.color="darkgreen";
-
+          document.getElementById("sign_err").style.color = "darkgreen";
         }
-        }
+      }
       function login_val() {
         var username = document.getElementById("loginEmail");
         var password = document.getElementById("lpassword");
@@ -53,66 +68,58 @@
         var pr = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
         if (username.value == "" || password.value == "") {
           document.getElementById("login_err").innerHTML = "Please Fill Data";
-          
         } else if (!er.test(username.value)) {
-          document.getElementById("login_err").innerHTML = "Email is not Correct";
+          document.getElementById("login_err").innerHTML =
+            "Email is not Correct";
           alert("hello");
         } else if (!pr.test(password.value)) {
-          document.getElementById("login_err").innerHTML = "Password is not Correct";
+          document.getElementById("login_err").innerHTML =
+            "Password is not Correct";
           alert("hello");
-        } 
-        else {
-          if(username.value=="Sriskuk1003@gmail.com"){
-            location.href="ques.html";
+        } else {
+          if (username.value == "Sriskuk1003@gmail.com") {
+            location.href = "ques.html";
+          } else {
+            document.getElementById("login_err").innerHTML = "";
+            localStorage.setItem("active", username.value);
+            location.href = "quiz.html";
           }
-          else{
-          document.getElementById("login_err").innerHTML = "";
-          localStorage.setItem("active",username.value);
-          location.href="quiz.html";
-          }
+        }
+      }
 
-        }
-      }
-    
-      let login_flag=false;
-      function login_hide()
-      {
-        if(login_flag==false){
-        document.getElementById("l_icon").classList.remove("fa-eye-slash");
-        document.getElementById("l_icon").classList.add("fa-eye");
-        document.getElementById("lpassword").type="text";
-        login_flag=true;
-        }
-        else{
+      let login_flag = false;
+      function login_hide() {
+        if (login_flag == false) {
+          document.getElementById("l_icon").classList.remove("fa-eye-slash");
+          document.getElementById("l_icon").classList.add("fa-eye");
+          document.getElementById("lpassword").type = "text";
+          login_flag = true;
+        } else {
           document.getElementById("l_icon").classList.remove("fa-eye");
-        document.getElementById("l_icon").classList.add("fa-eye-slash");
-        document.getElementById("lpassword").type="password";
-        login_flag=false;
+          document.getElementById("l_icon").classList.add("fa-eye-slash");
+          document.getElementById("lpassword").type = "password";
+          login_flag = false;
         }
       }
-      let sign_flag=false;
-      function sign_hide()
-      {
-        if(sign_flag==false){
-        document.getElementById("s_icon").classList.remove("fa-eye-slash");
-        document.getElementById("s_icon").classList.add("fa-eye");
-        document.getElementById("spassword").type="text";
-        sign_flag=true;
-        }
-        else{
+      let sign_flag = false;
+      function sign_hide() {
+        if (sign_flag == false) {
+          document.getElementById("s_icon").classList.remove("fa-eye-slash");
+          document.getElementById("s_icon").classList.add("fa-eye");
+          document.getElementById("spassword").type = "text";
+          sign_flag = true;
+        } else {
           document.getElementById("s_icon").classList.remove("fa-eye");
-        document.getElementById("s_icon").classList.add("fa-eye-slash");
-        document.getElementById("spassword").type="password";
-        sign_flag=false;
+          document.getElementById("s_icon").classList.add("fa-eye-slash");
+          document.getElementById("spassword").type = "password";
+          sign_flag = false;
         }
       }
     </script>
   </head>
   <body>
-
-        
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" >
-      <div class="container-fluid" style="background-color: teal;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid" style="background-color: teal">
         <a class="navbar-brand" href="#">QuizMystique</a>
         <button
           class="navbar-toggler"
@@ -126,8 +133,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <form class="d-flex" role="search">
             <button
               type="button"
@@ -137,38 +143,58 @@
             >
               SignUp
             </button>
-            <button type="button" class="btn btn-outline-dark m-1"
-            data-bs-toggle="modal"
-              data-bs-target="#loginModal">
+            <button
+              type="button"
+              class="btn btn-outline-dark m-1"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
               Login
             </button>
           </form>
         </div>
       </div>
     </nav>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div
+      id="carouselExampleAutoplaying"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="pics/OIP.jpeg" class="d-block w-100" alt="...">
+          <img src="pics/OIP.jpeg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="pics/quiz.jpg" class="d-block w-100" alt="...">
+          <img src="pics/quiz.jpg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="pics/quiz2.jpg" class="d-block w-100" alt="...">
+          <img src="pics/quiz2.jpg" class="d-block w-100" alt="..." />
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
 
-    <h3 class="mt-3" style="text-align: center; background-color: teal; padding: 8px;">
+    <h3
+      class="mt-3"
+      style="text-align: center; background-color: teal; padding: 8px"
+    >
       Types of Quizes
     </h3>
 
@@ -176,79 +202,117 @@
       <div class="row">
         <div class="col-md-3">
           <div class="card">
-            <img src="pics/book.jpg" class="card-img-top" alt="...">
+            <img src="pics/book.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Books</h5>
-              <p class="card-text">A great way to test your book Knowledge and hence your productivity by taking a simple quiz</p>
+              <p class="card-text">
+                A great way to test your book Knowledge and hence your
+                productivity by taking a simple quiz
+              </p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card">
-            <img src="pics/film.jpg" class="card-img-top" alt="...">
+            <img src="pics/film.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Movie</h5>
-              <p class="card-text">Answer your Favourite Movie questions,and show how much you love movies by Answering a quiz</p>
-             
+              <p class="card-text">
+                Answer your Favourite Movie questions,and show how much you love
+                movies by Answering a quiz
+              </p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card">
-            <img src="pics/music.jpg" class="card-img-top" alt="...">
+            <img src="pics/music.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Music</h5>
-              <p class="card-text">Music lovers are everywhere, But how much you know about music.Just take quiz about music.</p>
-             
+              <p class="card-text">
+                Music lovers are everywhere, But how much you know about
+                music.Just take quiz about music.
+              </p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card">
-            <img src="pics/games.jpg" class="card-img-top" alt="...">
+            <img src="pics/games.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Games</h5>
-              <p class="card-text">How much do you know about games ,test it out by participating in a quiz about games.</p>
-              
+              <p class="card-text">
+                How much do you know about games ,test it out by participating
+                in a quiz about games.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
-    <div class="text-center mt-3" style="font-size: 25px;background-color: teal;">
+    <div
+      class="text-center mt-3"
+      style="font-size: 25px; background-color: teal"
+    >
       Reach Us
     </div>
-  <div class="container">
-    <div class="row mt-3 mb-3">
-      <div class="col-md-6 text-center" style="height: 300px; ">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13899.023213213542!2d76.96570323569485!3d29.435932791524184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dd9900b732f1d%3A0x90fecfa4725876cb!2sSector%20-%2018%2C%20HUDA%2C%20Panipat%2C%20Haryana%20132103!5e0!3m2!1sen!2sin!4v1689891361172!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-  
-      <div class="col-md-6" style="height: 300px;">
+    <div class="container">
+      <div class="row mt-3 mb-3">
+        <div class="col-md-6 text-center" style="height: 300px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13899.023213213542!2d76.96570323569485!3d29.435932791524184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dd9900b732f1d%3A0x90fecfa4725876cb!2sSector%20-%2018%2C%20HUDA%2C%20Panipat%2C%20Haryana%20132103!5e0!3m2!1sen!2sin!4v1689891361172!5m2!1sen!2sin"
+            width="400"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="col-md-6" style="height: 300px">
           <div class="offset-md-3">
             <div>
-            <i class="fa-brands fa-instagram  fa-3x col" id="insta"></i>
-          <a class="m-2" href="https://www.instagram.com/invites/contact/?i=1cp2og40pkzju&utm_content=h9izii7" style="color: inherit;text-decoration: none;font-size: 20px;">srishti.kukreja.168</a>
-          </div>
-          <div class="mt-3">
-          <i class="fa-brands fa-facebook fa-3x " id="fac" style="color: #1877f2;"></i>
-          <a class="m-2" href="https://www.facebook.com/srishti.kukreja.35?mibextid=ZbWKwL" style="color: inherit;text-decoration: none;font-size: 20px;">Srishti Kukreja</a>
-          </div>
-          <div class="mt-3">
-            <i class="fa-brands fa-twitter  fa-3x " id="twit" style="color: #1da1f2;"></i>
-            <a class="m-2" href="https://twitter.com/Srishti168168" style="color: inherit;text-decoration: none;font-size: 20px;">Srishti Kukreja</a>
+              <i class="fa-brands fa-instagram fa-3x col" id="insta"></i>
+              <a
+                class="m-2"
+                href="https://www.instagram.com/invites/contact/?i=1cp2og40pkzju&utm_content=h9izii7"
+                style="color: inherit; text-decoration: none; font-size: 20px"
+                >srishti.kukreja.168</a
+              >
+            </div>
+            <div class="mt-3">
+              <i
+                class="fa-brands fa-facebook fa-3x"
+                id="fac"
+                style="color: #1877f2"
+              ></i>
+              <a
+                class="m-2"
+                href="https://www.facebook.com/srishti.kukreja.35?mibextid=ZbWKwL"
+                style="color: inherit; text-decoration: none; font-size: 20px"
+                >Srishti Kukreja</a
+              >
+            </div>
+            <div class="mt-3">
+              <i
+                class="fa-brands fa-twitter fa-3x"
+                id="twit"
+                style="color: #1da1f2"
+              ></i>
+              <a
+                class="m-2"
+                href="https://twitter.com/Srishti168168"
+                style="color: inherit; text-decoration: none; font-size: 20px"
+                >Srishti Kukreja</a
+              >
             </div>
           </div>
+        </div>
       </div>
-      
     </div>
-    </div>
-     <div style="background-color: teal; height: 50px;">
-  
-     </div>
-    <!-- <img src="" class="img-fluid" alt="..." > -->
+    <div style="background-color: teal; height: 50px"></div>
 
     <!-- SignUpModal -->
     <div
@@ -258,9 +322,12 @@
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" >
+      <div class="modal-dialog">
         <form>
-          <div class="modal-content" style="background: rgba(255, 255, 255, 0);color: lightgray;">
+          <div
+            class="modal-content"
+            style="background: rgba(255, 255, 255, 0); color: lightgray"
+          >
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
                 SignUp here
@@ -270,7 +337,7 @@
                 class="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                style="background-color: red;"
+                style="background-color: red"
               ></button>
             </div>
             <div class="modal-body">
@@ -282,14 +349,22 @@
                 aria-describedby="passwordHelpBlock"
               />
               <label for="inputPassword5" class="form-label">Password</label>
-              <i class="fa-solid fa-eye-slash" onclick="sign_hide()" id="s_icon"></i>
+              <i
+                class="fa-solid fa-eye-slash"
+                onclick="sign_hide()"
+                id="s_icon"
+              ></i>
               <input
                 type="password"
                 id="spassword"
                 class="form-control"
                 aria-describedby="passwordHelpBlock"
               />
-              <div id="passwordHelpBlock" class="form-text" style="color: antiquewhite;">
+              <div
+                id="passwordHelpBlock"
+                class="form-text"
+                style="color: antiquewhite"
+              >
                 Your password must be 8-20 characters.
               </div>
               <div id="sign_err" style="color: red"></div>
@@ -315,7 +390,6 @@
       </div>
     </div>
 
-
     <!-- login modal -->
     <div
       class="modal fade"
@@ -326,7 +400,10 @@
     >
       <div class="modal-dialog">
         <form>
-          <div class="modal-content" style="background: rgba(0,0,0,0.6); color: wheat">
+          <div
+            class="modal-content"
+            style="background: rgba(0, 0, 0, 0.6); color: wheat"
+          >
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
                 SignUp here
@@ -335,9 +412,9 @@
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                
                 aria-label="Close"
-                style="background-color: red";
+                style="background-color: red"
+                ;
               ></button>
             </div>
             <div class="modal-body">
@@ -349,14 +426,18 @@
                 aria-describedby="passwordHelpBlock"
               />
               <label for="inputPassword5" class="form-label">Password</label>
-              <i class="fa-solid fa-eye-slash" onclick="login_hide()" id="l_icon"></i>
+              <i
+                class="fa-solid fa-eye-slash"
+                onclick="login_hide()"
+                id="l_icon"
+              ></i>
               <input
                 type="password"
                 id="lpassword"
                 class="form-control"
                 aria-describedby="passwordHelpBlock"
               />
-              
+
               <div id="login_err" style="color: red"></div>
             </div>
             <div class="modal-footer">

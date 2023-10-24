@@ -114,7 +114,7 @@ const loadingAnimation = () => {
 };
 function defineProperty() {
   var osccred = document.createElement("div");
-  
+
   osccred.style.position = "absolute";
   osccred.style.bottom = "0";
   osccred.style.right = "0";
@@ -220,48 +220,43 @@ const playAdudio = (src) => {
   audio.play();
 };
 
-const highScore=JSON.parse(localStorage.getItem('highScore'))|| [];
-const username=document.getElementById('username');
-const saveScoreBtn=document.getElementById('saveScoreBtn');
-username.addEventListener("keyup",()=>{
-    console.log(username.value);
-     saveScoreBtn.disabled=!username.value;
+const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
+const username = document.getElementById("username");
+const saveScoreBtn = document.getElementById("saveScoreBtn");
+username.addEventListener("keyup", () => {
+  console.log(username.value);
+  saveScoreBtn.disabled = !username.value;
 });
 
-
-saveHighScore=e=>{
-    e.preventDefault();
-    console.log(score);
-   console.log(questions.length);
-    const scored={
-        scores:score,
-		name:username.value,
-		max:questions.length
-    };
-    highScore.push(scored);
-   console.log(highScore);
-    highScore.sort((a,b)=>{
-       return b.scores-a.scores;
-    });
-	console.log(highScore);
-    highScore.splice(5);
-	// alert("data saved");
-    localStorage.setItem('highScore',JSON.stringify(highScore));
-   
-};
-const highScoreList=document.getElementById('highScoreList');
-const ScoreScreen = document.querySelector(".score-screen");
-const showAllHigh=JSON.parse(localStorage.getItem('highScore'));
-const showHigh = () => {
-	ScoreScreen.classList.remove("hide");
-	quiz.classList.add("hide");
-	endScreen.classList.add("hide");
-	highScoreList.innerHTML=
-	highScore.map(score => {
-		return `<ol class="high-score">${score.name} - ${score.scores} / ${score.max}</ol>`
-	}).join("");
-	
+saveHighScore = (e) => {
+  e.preventDefault();
+  console.log(score);
+  console.log(questions.length);
+  const scored = {
+    scores: score,
+    name: username.value,
+    max: questions.length,
   };
-
-
-
+  highScore.push(scored);
+  console.log(highScore);
+  highScore.sort((a, b) => {
+    return b.scores - a.scores;
+  });
+  console.log(highScore);
+  highScore.splice(5);
+  // alert("data saved");
+  localStorage.setItem("highScore", JSON.stringify(highScore));
+};
+const highScoreList = document.getElementById("highScoreList");
+const ScoreScreen = document.querySelector(".score-screen");
+const showAllHigh = JSON.parse(localStorage.getItem("highScore"));
+const showHigh = () => {
+  ScoreScreen.classList.remove("hide");
+  quiz.classList.add("hide");
+  endScreen.classList.add("hide");
+  highScoreList.innerHTML = highScore
+    .map((score) => {
+      return `<ol class="high-score">${score.name} - ${score.scores} / ${score.max}</ol>`;
+    })
+    .join("");
+};
