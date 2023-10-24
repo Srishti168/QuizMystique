@@ -47,7 +47,6 @@ git clone https://github.com/yourusername/quiz-website.git
 
 # Directory Structure
 The project's directory structure is organized as follows:
-quiz-website/
 * [pics/](.\Project\pics)
   * [back.jpg](.\Project\pics\back.jpg)
   * [back.webp](.\Project\pics\back.webp)
