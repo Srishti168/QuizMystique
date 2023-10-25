@@ -1,6 +1,8 @@
 const progressBar = document.querySelector(".progress-bar"),
   progressText = document.querySelector(".progress-text");
 
+
+// progress bar  
 const progress = (value) => {
   const percentage = (value / time) * 100;
   progressBar.style.width = `${percentage}%`;
@@ -21,6 +23,8 @@ let questions = [],
   currentQuestion,
   timer;
 
+
+  // Starting a a quiz
 const startQuiz = () => {
   const num = numQuestions.value,
     cat = category.value,
@@ -42,6 +46,9 @@ const startQuiz = () => {
 
 startBtn.addEventListener("click", startQuiz);
 
+
+
+//Showing Question
 const showQuestion = (question) => {
   const questionText = document.querySelector(".question"),
     answersWrapper = document.querySelector(".answer-wrapper");
@@ -88,11 +95,11 @@ const showQuestion = (question) => {
   startTimer(time);
 };
 
+
+
+//timer 
 const startTimer = (time) => {
   timer = setInterval(() => {
-    if (time === 3) {
-      playAdudio("countdown.mp3");
-    }
     if (time >= 0) {
       progress(time);
       time--;
@@ -102,6 +109,9 @@ const startTimer = (time) => {
   }, 1000);
 };
 
+
+
+// animation for loading
 const loadingAnimation = () => {
   startBtn.innerHTML = "Loading";
   const loadingInterval = setInterval(() => {
@@ -112,6 +122,11 @@ const loadingAnimation = () => {
     }
   }, 500);
 };
+
+
+
+
+// properties for div
 function defineProperty() {
   var osccred = document.createElement("div");
 
@@ -131,18 +146,27 @@ function defineProperty() {
 
 defineProperty();
 
+
+
+// Submitting an answer
 const submitBtn = document.querySelector(".submit"),
   nextBtn = document.querySelector(".next");
 submitBtn.addEventListener("click", () => {
   checkAnswer();
 });
 
+
+
+// moving to next question
 nextBtn.addEventListener("click", () => {
   nextQuestion();
   submitBtn.style.display = "block";
   nextBtn.style.display = "none";
 });
 
+
+
+// Checking if answer is correct or not
 const checkAnswer = () => {
   clearInterval(timer);
   const selectedAnswer = document.querySelector(".answer.selected");
@@ -186,6 +210,9 @@ const checkAnswer = () => {
   nextBtn.style.display = "block";
 };
 
+
+
+// check length of questions
 const nextQuestion = () => {
   if (currentQuestion < questions.length) {
     currentQuestion++;
@@ -195,6 +222,8 @@ const nextQuestion = () => {
   }
 };
 
+
+// Showing final score
 const endScreen = document.querySelector(".end-screen"),
   finalScore = document.querySelector(".final-score"),
   totalScore = document.querySelector(".total-score");
@@ -205,59 +234,64 @@ const showScore = () => {
   totalScore.innerHTML = `/ ${questions.length}`;
 };
 
+
+
+// Restarting the quiz
 const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", () => {
   window.location.reload();
 });
 
+// after highscore restarting the quiz
 const reStartQuiz = document.querySelector(".startQuiz");
 reStartQuiz.addEventListener("click", () => {
   window.location.reload();
 });
 
+
+// index.html
 const mainquiz = document.querySelector(".mainquiz");
 mainquiz.addEventListener("click", () => {
     location.href="/index.html";
 });
 
-const playAdudio = (src) => {
-  const audio = new Audio(src);
-  audio.play();
-};
 
+// highscore event listener
 const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
 const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("saveScoreBtn");
+const scoreSaved =document.getElementById("scoreSaved");
 username.addEventListener("keyup", () => {
-  console.log(username.value);
   saveScoreBtn.disabled = !username.value;
 });
 
+
+// saving the score and altering highscore
 saveHighScore = (e) => {
   e.preventDefault();
-  console.log(score);
-  console.log(questions.length);
   const scored = {
     scores: score,
     name: username.value,
     max: questions.length,
   };
   highScore.push(scored);
-  console.log(highScore);
   highScore.sort((a, b) => {
     return b.scores - a.scores;
   });
-  console.log(highScore);
   highScore.splice(5);
-  // alert("data saved");
+  alert("data saved")
+  scoreSaved.innerHTML=`<p>Data saved successfully</p>`;
   localStorage.setItem("highScore", JSON.stringify(highScore));
 };
+
+
+
+// showing highscore
 const highScoreList = document.getElementById("highScoreList");
 const ScoreScreen = document.querySelector(".score-screen");
 const showAllHigh = JSON.parse(localStorage.getItem("highScore"));
 const showHigh = () => {
   ScoreScreen.classList.remove("hide");
-  quiz.classList.add("hide");
   endScreen.classList.add("hide");
   highScoreList.innerHTML = highScore
     .map((score) => {

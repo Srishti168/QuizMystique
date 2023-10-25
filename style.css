@@ -203,6 +203,12 @@ select {
   margin-bottom: 120px;
 }
 
+
+#scoreSaved{
+  text-align: center;
+  color: green;
+}
+
 .highText{
     text-align: center;
     font-size: 15px;
