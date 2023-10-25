@@ -215,6 +215,11 @@ reStartQuiz.addEventListener("click", () => {
   window.location.reload();
 });
 
+const mainquiz = document.querySelector(".mainquiz");
+mainquiz.addEventListener("click", () => {
+    location.href="/index.html";
+});
+
 const playAdudio = (src) => {
   const audio = new Audio(src);
   audio.play();
