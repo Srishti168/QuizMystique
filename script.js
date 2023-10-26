@@ -273,13 +273,13 @@ saveHighScore = (e) => {
     scores: score,
     name: username.value,
     max: questions.length,
+    percentage:(score/questions.length)*100
   };
   highScore.push(scored);
   highScore.sort((a, b) => {
-    return b.scores - a.scores;
+    return b.percentage - a.percentage;
   });
   highScore.splice(5);
-  alert("data saved")
   scoreSaved.innerHTML=`<p>Data saved successfully</p>`;
   localStorage.setItem("highScore", JSON.stringify(highScore));
 };
