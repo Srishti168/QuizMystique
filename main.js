@@ -1,9 +1,10 @@
-function validate() {
+function sign_validate() {
+  var er = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+  var pr = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
   var username = document.getElementById("signEmail");
   var password = document.getElementById("spassword");
 
-  var er = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-  var pr = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
   if (username.value == "" || password.value == "") {
     document.getElementById("sign_err").innerHTML = "Please Fill Data";
     
@@ -20,10 +21,12 @@ function validate() {
 }
 
 function login_val() {
-  var username = document.getElementById("loginEmail");
-  var password = document.getElementById("lpassword");
   var er = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
   var pr = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+  var username = document.getElementById("loginEmail");
+  var password = document.getElementById("lpassword");
+ 
   if (username.value == "" || password.value == "") {
     document.getElementById("login_err").innerHTML = "Please Fill Data";
     
@@ -34,13 +37,10 @@ function login_val() {
     document.getElementById("login_err").innerHTML = "Password is not Correct";
     
   } else {
-    if (username.value == "Sriskuk1003@gmail.com") {
-      location.href = "ques.html";
-    } else {
       document.getElementById("login_err").innerHTML = "";
       localStorage.setItem("active", username.value);
       location.href = "quiz.html";
-    }
+    
   }
 }
 
